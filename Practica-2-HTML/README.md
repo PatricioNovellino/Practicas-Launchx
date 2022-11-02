@@ -1,5 +1,5 @@
-Aqui estarán mis paginas web para la practica 2 - HTML:
+# Aqui estarán mis paginas web para la practica 2 - HTML:
 
-* Cliente:
+* Cliente: https://patricionovellino.github.io/pasteleria-cliente-practica2.html
 
-* Admin: 
+* Admin: https://patricionovellino.github.io/pasteleria-admin-practica2.html
