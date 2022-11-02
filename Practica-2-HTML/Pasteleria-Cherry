@@ -2,9 +2,246 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelería Cherry</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 11%;
+            border: #000000 6px outset;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Estilo de header */
+        header {
+            background-color: #FDD4D274;
+            padding: 10px;
+            text-align: center;
+            font-size: 35px;
+            color: #3E4677;
+        }
+
+        /* Crear 2 columnas con la misma posición en la fila */
+        nav {
+            float: left;
+            width: 30%;
+            height: 1400px;
+            /* only for demonstration, should be removed */
+            background: #ccc;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        dt {
+            margin-top: 10px;
+        }
+
+        table {
+            width: 40%;
+            text-align: left;
+        }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 100%;
+            background-color: #FDD4D274;
+            /*height: 300px;*/
+        }
+
+        form {
+            margin-top: 10px;
+        }
+
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Estilo de footer */
+        footer {
+            background-color: #FDD4D274;
+            padding: 10px;
+            text-align: center;
+            color: #3E4677;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
+
 <body>
+
+<header>
+    <img src="https://raw.githubusercontent.com/PatricioNovellino/Practicas-Launchx/main/Practica-2-HTML/Multimedia/Pasteleria-cherry-icono.png"
+         alt="Logo Pastelería Cherry"
+         style="float: left">
+    <h1>
+        Pastelería Cherry
+    </h1>
+    <hr>
+</header>
+
+<section>
+    <article>
+        <section>
+            <h2>
+               Pastelería
+            </h2>
+
+            <h3>Menú</h3>
+            <p>Cada torta puede pedirse en sabor <b>chocolate, vainilla, o mixta</b>
+                (esta última con un recargo de $500).
+                <br>Precios de tortas con 2 pisos
+            </p>
+            <ul>
+                <li>Dobo.................................. $2000</li>
+                <li>Diablo................................. $2500</li>
+                <li>Oreo................................... $3000</li>
+            </ul>
+
+            <p><b>Adición a tortas</b></p>
+
+            <dl>
+                <dt>Figuras comestibles.............................................. $1000</dt>
+                <dd>- Se realiza a mano con galleta de vainilla.</dd>
+                <dt>Caramelo moldeado.............................................. $500 - $1000</dt>
+                <dd>- Precio varía dependiendo complejidad. </dd>
+                <dt>Motivos con azucar impalpable............................. $300</dt>
+                <dd>- Se añade motivo a elegir del catálogo. </dd>
+            </dl>
+
+            <h2>Panadería</h2>
+
+            <h3>Menú</h3>
+            <ul>
+                <li>Medialunas grasa (docena)........... $500</li>
+                <li>Medialunas manteca (docena)...... $600</li>
+                <li>Palmeritas (&frac14kg)........................... $200</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2> Sucursales </h2>
+            <table>
+                <tr>
+                    <th> Ubicación </th>
+                    <th> Horario </th>
+                    <th> Teléfono </th>
+                </tr>
+                <tr>
+                    <td> Rafael Calzada </td>
+                    <td> 9:00 a 18:00 </td>
+                    <td> 0123456789 </td>
+                </tr>
+                <tr>
+                    <td> Quilmes </td>
+                    <td> 8:00 a 16:00 </td>
+                    <td> 4567890123 </td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2> ¡Haz tu pedido! </h2>
+            <!-- Acá agregaría algún tipo de vinculación con la página de pastelero para indicar al cte en que sucursal
+             contamos con stock-->
+           <form>
+
+               <label for="sucursal"><b>Elije una sucursal:</b></label>
+               <select name="sucursal" id="sucursal">
+                   <option value="Rafael Calzada">Rafael Calzada</option>
+                   <option value="Quilmes">Quilmes</option>
+               </select>
+
+               <p><b>Ingresa tu información:</b></p>
+               <label for="nombre">Nombre:</label>
+               <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?">
+               <br><br>
+               <label for="teléfono">Teléfono:</label>
+               <input type="tel" id="teléfono" name="teléfono" placeholder="¿Cuál es tu número?">
+               <br><br>
+               <label for="email">E-mail:</label>
+               <input type="email" id="email" name="email" placeholder="¿Cuál es tu E-mail?">
+               <br><br>
+               <label for="descripción">Descripción:</label>
+               <input type="text" id="descripción" name="descripción" placeholder="Descripción del pastel:">
+               <br><br><br>
+
+               <p><b>Elige las características de tu pastel:</b></p>
+               <p>¿Qué sabor y cuantos pisos quieres que tenga?</p>
+               <input type="radio" id="chocolate" name="sabor" value="chocolate">
+               <label for="chocolate">Chocolate</label>
+               <label for="chocolateN"></label>
+               <input type="number" placeholder="Cuantos?" id="chocolateN" name="chocolateN"><br><br>
+
+               <input type="radio" id="vainilla" name="sabor" value="vainilla">
+               <label for="vainilla">Vainilla</label>
+               <label for="vainillaN"></label>
+               <input type="number" placeholder="Cuantos?" id="vainillaN" name="vainillaN"><br>
+
+               <p>En caso de pedir mixto, seleccionar cuantos pisos de cada sabor
+                   (Chocolate y Vainilla respectivamente):</p>
+               <input type="radio" id="mixto" name="sabor" value="mixto">
+               <label for="mixto">Mixto</label>
+               <label for="mixtoC"></label>
+               <input type="number" placeholder="Chocolate" id="mixtoC" name="mixtoN">
+               <label for="mixtoV"></label>
+               <input type="number" placeholder="Vainilla" id="mixtoV" name="mixtoN"><br><br>
+
+               <p>¿Qué adornos quieres que tenga?</p>
+               <input type="checkbox" id="figuras" name="adición" value="figuras">
+               <label for="figuras">Figuras comestibles</label>
+               <label for="figurasN"></label>
+               <input type="number" placeholder="Cuantos?" id="figurasN" name="chocolateN"><br><br>
+
+               <input type="checkbox" id="caramelo" name="adición" value="caramelo">
+               <label for="caramelo">Formas en caramelo</label>
+               <label for="carameloN"></label>
+               <input type="number" placeholder="Cuantos?" id="carameloN" name="carameloN"><br><br>
+
+               <input type="checkbox" id="azucar" name="adición" value="azucar">
+               <label for="azucar">Motivos de azucar impalpable</label>
+               <label for="azucarN"></label>
+               <input type="number" placeholder="Cuantos?" id="azucarN" name="azucarN"><br><br>
+               <hr>
+               <button type="submit">Enviar Pedido </button>
+               <hr>
+
+           </form>
+
+        </section>
+    </article>
+</section>
+
+<footer>
+    <p><b>@Derechos Reservados</b></p>
+</footer>
 
 </body>
 </html>
